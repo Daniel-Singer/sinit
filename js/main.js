@@ -73,6 +73,22 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
+// --- Scroll animations via IntersectionObserver ----------------------------
+const animateEls = document.querySelectorAll('.animate-fade-up, .animate-stagger');
+
+if ('IntersectionObserver' in window && animateEls.length) {
+  const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        scrollObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  animateEls.forEach(el => scrollObserver.observe(el));
+}
+
 // --- Contact form submission (placeholder) ---------------------------------
 const contactForm = document.querySelector('.contact__form');
 
@@ -80,11 +96,11 @@ if (contactForm) {
   contactForm.addEventListener('submit', e => {
     e.preventDefault();
     const btn = contactForm.querySelector('button[type="submit"]');
-    btn.textContent = 'Message sent!';
+    btn.textContent = 'Nachricht gesendet!';
     btn.disabled = true;
 
     setTimeout(() => {
-      btn.textContent = 'Send message';
+      btn.textContent = 'Nachricht senden';
       btn.disabled = false;
       contactForm.reset();
     }, 3000);
