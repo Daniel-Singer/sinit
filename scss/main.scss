@@ -1,0 +1,23 @@
+// ==========================================================================
+// sinit · Main Stylesheet
+// Import order matters — variables first, then reset, then modules.
+// ==========================================================================
+
+// 1. Design tokens
+@import 'variables';
+
+// 2. Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+// 3. Base
+@import 'reset';
+@import 'typography';
+
+// 4. Components (buttons, cards, badges, inputs)
+@import 'components';
+
+// 5. Layout sections
+@import 'navbar';
+@import 'hero';
+@import 'sections';
+@import 'footer';

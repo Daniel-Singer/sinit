@@ -1,0 +1,186 @@
+// ==========================================================================
+// Typography Scale
+// Display: Manrope 500 (Aeonik Pro substitute)
+// Body:    Inter 400/600
+// ==========================================================================
+
+// --- Display ---------------------------------------------------------------
+.t-display-xxl {
+  font-family: $font-display;
+  font-weight: 500;
+  font-size: 136px;
+  line-height: 1.0;
+  letter-spacing: -2.72px;
+}
+
+.t-display-xl {
+  font-family: $font-display;
+  font-weight: 500;
+  font-size: 80px;
+  line-height: 1.0;
+  letter-spacing: -0.8px;
+}
+
+.t-display-lg {
+  font-family: $font-display;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 1.21;
+  letter-spacing: -0.48px;
+}
+
+.t-display-md {
+  font-family: $font-display;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: -0.4px;
+}
+
+// --- Headings --------------------------------------------------------------
+.t-heading-lg {
+  font-family: $font-display;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.19;
+  letter-spacing: -0.32px;
+}
+
+.t-heading-md {
+  font-family: $font-display;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.33;
+}
+
+.t-heading-sm {
+  font-family: $font-display;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+// --- Body ------------------------------------------------------------------
+.t-body-lg {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: -0.09px;
+}
+
+.t-body-md {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.24px;
+}
+
+.t-body-md-bold {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.16px;
+}
+
+.t-body-sm {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.43;
+}
+
+// --- UI / Buttons ----------------------------------------------------------
+.t-button-lg {
+  font-family: $font-display;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.t-button-md {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.24px;
+}
+
+.t-button-sm {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.43;
+}
+
+.t-caption {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.t-link-emph {
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.24px;
+}
+
+// --- Semantic element defaults ---------------------------------------------
+h1 {
+  font-family: $font-display;
+  font-weight: 500;
+  font-size: clamp(48px, 8vw, 96px);
+  line-height: 1.0;
+  letter-spacing: -0.022em;
+}
+
+h2 {
+  font-family: $font-display;
+  font-weight: 500;
+  font-size: clamp(36px, 5vw, 48px);
+  line-height: 1.21;
+  letter-spacing: -0.48px;
+}
+
+h3 {
+  font-family: $font-display;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.19;
+  letter-spacing: -0.32px;
+}
+
+h4 {
+  font-family: $font-display;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.33;
+}
+
+h5 {
+  font-family: $font-display;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+p {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.24px;
+  color: $body-color;
+}
+
+small {
+  font-family: $font-body;
+  font-size: 13px;
+  line-height: 1.4;
+  color: $mute;
+}

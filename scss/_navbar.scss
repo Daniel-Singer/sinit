@@ -1,0 +1,148 @@
+// ==========================================================================
+// NavBar — sticky dark header
+// ==========================================================================
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: $canvas-dark;
+  color: $on-dark;
+  border-bottom: 1px solid $hairline-dark;
+
+  &__inner {
+    max-width: $container-max;
+    margin: 0 auto;
+    height: $nav-height;
+    display: flex;
+    align-items: center;
+    padding: 0 $space-xl;
+    gap: $space-xxl;
+  }
+
+  // Brand / Logo
+  &__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: $on-dark;
+    flex-shrink: 0;
+
+    &:hover { text-decoration: none; }
+  }
+
+  &__logo {
+    height: 28px;
+    width: auto;
+  }
+
+  // Centre navigation links
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: $space-xl;
+  }
+
+  &__link {
+    color: rgba(255, 255, 255, 0.85);
+    font-family: $font-body;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.16px;
+    text-decoration: none;
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: $on-dark;
+      text-decoration: none;
+    }
+  }
+
+  // Right side actions
+  &__actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: $space-lg;
+  }
+
+  &__login {
+    color: $on-dark;
+    font-family: $font-body;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.24px;
+    text-decoration: none;
+
+    &:hover { text-decoration: underline; }
+  }
+
+  // Hamburger (mobile only)
+  &__hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+
+    span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: $on-dark;
+      border-radius: 2px;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    &.is-open {
+      span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      span:nth-child(2) { opacity: 0; }
+      span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    }
+  }
+
+  // Mobile drawer
+  &__drawer {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    background: $surface-deep;
+    border-top: 1px solid $hairline-dark;
+    padding: $space-xl $space-xl $space-xxl;
+
+    &.is-open { display: flex; }
+
+    .navbar__link {
+      font-size: 18px;
+      padding: $space-md 0;
+      border-bottom: 1px solid $hairline-dark;
+    }
+
+    .navbar__actions-mobile {
+      display: flex;
+      flex-direction: column;
+      gap: $space-sm;
+      margin-top: $space-xl;
+    }
+  }
+}
+
+@media (max-width: #{$bp-tablet}) {
+  .navbar {
+    &__nav,
+    &__login {
+      display: none;
+    }
+
+    &__hamburger {
+      display: flex;
+    }
+
+    &__actions .btn {
+      display: none;
+    }
+  }
+}

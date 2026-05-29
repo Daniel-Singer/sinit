@@ -1,0 +1,150 @@
+// ==========================================================================
+// Hero — dark full-bleed band
+// ==========================================================================
+
+.hero {
+  background: $canvas-dark;
+  color: $on-dark;
+  padding: $space-section $space-xl $space-band;
+  position: relative;
+  overflow: hidden;
+
+  &__inner {
+    max-width: $container-max;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: $space-xxxl + $space-lg; // ~62px
+    align-items: center;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xl;
+  }
+
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-sm;
+    font-family: $font-body;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: $primary;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-weight: 500;
+    font-size: clamp(52px, 8.5vw, 112px);
+    line-height: 1.0;
+    letter-spacing: -0.022em;
+    color: $on-dark;
+    margin: 0;
+  }
+
+  &__subtitle {
+    font-family: $font-body;
+    font-weight: 400;
+    font-size: clamp(17px, 2vw, 20px);
+    line-height: 1.5;
+    letter-spacing: -0.09px;
+    color: $on-dark-mute;
+    max-width: 520px;
+    margin: 0;
+  }
+
+  &__ctas {
+    display: flex;
+    gap: $space-sm + $space-xs; // 14px
+    flex-wrap: wrap;
+    margin-top: $space-sm;
+  }
+
+  &__disclosure {
+    font-family: $font-body;
+    font-size: 12px;
+    letter-spacing: 0.16px;
+    color: rgba(255, 255, 255, 0.45);
+    max-width: 500px;
+    margin-top: $space-sm;
+    line-height: 1.5;
+  }
+
+  // Right visual placeholder — replaced with real content later
+  &__visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__visual-card {
+    width: 100%;
+    max-width: 440px;
+    aspect-ratio: 9 / 16;
+    max-height: 520px;
+    background: $surface-elevated;
+    border-radius: $radius-xl;
+    border: 1px solid $hairline-dark;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $space-xl;
+    padding: $space-xxl;
+
+    &-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: $radius-lg;
+      background: $primary;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 36px;
+        height: 36px;
+        fill: $on-primary;
+      }
+    }
+
+    &-label {
+      font-family: $font-display;
+      font-size: 18px;
+      font-weight: 500;
+      color: $on-dark-mute;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: #{$bp-desktop}) {
+  .hero {
+    &__inner {
+      grid-template-columns: 1fr;
+      gap: $space-xxxl;
+    }
+
+    &__visual {
+      display: none;
+    }
+
+    &__subtitle {
+      max-width: 600px;
+    }
+  }
+}
+
+@media (max-width: #{$bp-tablet}) {
+  .hero {
+    padding: $space-block $space-lg $space-section;
+
+    &__title {
+      font-size: clamp(40px, 10vw, 64px);
+    }
+  }
+}

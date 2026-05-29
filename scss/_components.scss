@@ -1,0 +1,215 @@
+// ==========================================================================
+// Components — Buttons, Cards, Badges, Inputs
+// ==========================================================================
+
+// --- Buttons ---------------------------------------------------------------
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-sm;
+  height: 48px;
+  padding: 0 28px;
+  border-radius: $radius-full;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.24px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+
+  // White pill on dark — primary CTA on dark canvas
+  &--primary {
+    background: $canvas-light;
+    color: $canvas-dark;
+
+    &:hover {
+      background: $faint;
+      text-decoration: none;
+    }
+  }
+
+  // Dark pill on light — primary CTA on light canvas
+  &--dark {
+    background: $canvas-dark;
+    color: $on-dark;
+
+    &:hover {
+      background: $surface-elevated;
+      text-decoration: none;
+    }
+  }
+
+  // Soft surface CTA — tertiary on light canvas
+  &--soft {
+    background: $surface-soft;
+    color: $ink;
+
+    &:hover {
+      background: $hairline-light;
+      text-decoration: none;
+    }
+  }
+
+  // Outlined on light canvas
+  &--outline-light {
+    background: $canvas-light;
+    color: $ink;
+    border: 1px solid $hairline-strong;
+
+    &:hover {
+      background: $surface-soft;
+      text-decoration: none;
+    }
+  }
+
+  // Outlined on dark canvas — ghost CTA beside primary
+  &--outline-dark {
+    background: transparent;
+    color: $on-dark;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    &:hover {
+      border-color: $on-dark;
+      text-decoration: none;
+    }
+  }
+
+  // Small pill chip — sub-nav, filters
+  &--sm {
+    height: 36px;
+    padding: 0 $space-lg;
+    font-size: 14px;
+    background: $surface-soft;
+    color: $ink;
+
+    &:hover {
+      background: $hairline-light;
+    }
+  }
+
+  // Cobalt CTA — featured / highlight action on light canvas
+  &--primary-cobalt {
+    background: $primary;
+    color: $on-primary;
+
+    &:hover {
+      background: $primary-deep;
+      text-decoration: none;
+    }
+  }
+}
+
+// --- Cards -----------------------------------------------------------------
+.card {
+  border-radius: $radius-lg;
+  padding: $space-xxl;
+
+  &--light {
+    background: $surface-card;
+    color: $ink;
+    border: 1px solid $hairline-light;
+  }
+
+  &--dark {
+    background: $surface-elevated;
+    color: $on-dark;
+  }
+
+  &--featured {
+    background: $primary;
+    color: $on-primary;
+  }
+}
+
+// --- Badges ----------------------------------------------------------------
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: $radius-full;
+  font-size: 13px;
+  line-height: 1.4;
+
+  &--tag {
+    background: $surface-soft;
+    color: $ink;
+  }
+
+  &--feature {
+    background: $primary;
+    color: $on-primary;
+  }
+
+  &--dark {
+    background: rgba(255, 255, 255, 0.1);
+    color: $on-dark;
+  }
+}
+
+// --- Text Input ------------------------------------------------------------
+.text-input {
+  height: 56px;
+  padding: $space-md $space-lg;
+  border-radius: $radius-md;
+  border: 1px solid $hairline-light;
+  background: $canvas-light;
+  color: $ink;
+  font-family: $font-body;
+  font-size: 16px;
+  letter-spacing: 0.24px;
+  width: 100%;
+  transition: outline 0.1s ease;
+
+  &:focus {
+    outline: 2px solid $primary;
+    outline-offset: -1px;
+  }
+
+  &::placeholder {
+    color: $stone;
+  }
+}
+
+textarea.text-input {
+  height: auto;
+  min-height: 120px;
+  padding: $space-md $space-lg;
+  resize: vertical;
+}
+
+// --- Feature Glyph / Icon Box ----------------------------------------------
+.glyph-box {
+  width: 64px;
+  height: 64px;
+  border-radius: $radius-md;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  &--teal        { background: $accent-teal; }
+  &--pink        { background: $accent-pink; }
+  &--green       { background: $accent-light-green; }
+  &--blue        { background: $accent-light-blue; }
+  &--yellow      { background: $accent-yellow; }
+  &--cobalt      { background: $primary; }
+  &--warning     { background: $accent-warning; }
+
+  svg {
+    width: 28px;
+    height: 28px;
+    fill: rgba(255, 255, 255, 0.85);
+  }
+}
+
+// --- Divider ---------------------------------------------------------------
+.divider {
+  height: 1px;
+
+  &--light { background: $hairline-light; }
+  &--dark  { background: $hairline-dark; }
+  &--strong { background: $hairline-strong; }
+}
