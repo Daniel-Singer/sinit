@@ -159,21 +159,25 @@
     border: 1px solid $hairline-dark;
     border-radius: $radius-lg;
     padding: $space-xxl;
+    display: flex;
+    flex-direction: column;
+    gap: $space-md;
 
     &-value {
       font-family: $font-display;
       font-weight: 500;
-      font-size: 48px;
-      line-height: 1.0;
-      letter-spacing: -0.48px;
+      font-size: 24px;
+      line-height: 1.2;
+      letter-spacing: -0.3px;
       color: $on-dark;
-      margin-bottom: $space-sm;
+      padding-bottom: $space-md;
+      border-bottom: 1px solid $hairline-dark;
     }
 
     &-label {
       font-family: $font-body;
-      font-size: 14px;
-      line-height: 1.43;
+      font-size: 13px;
+      line-height: 1.6;
       color: $on-dark-mute;
     }
   }
@@ -590,15 +594,15 @@
 
     &::before {
       content: '✓';
-      width: 20px;
-      height: 20px;
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
       background: $primary;
       color: $on-primary;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 11px;
+      font-size: 14px;
       font-weight: 700;
       flex-shrink: 0;
     }
