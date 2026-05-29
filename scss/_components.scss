@@ -17,8 +17,31 @@
   letter-spacing: 0.24px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  transition: color 0.3s ease, border-color 0.3s ease, background-color 0.55s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+
+  // Spotlight fill — injected via JS, scales from cursor position
+  &__fill {
+    position: absolute;
+    border-radius: 50%;
+    background: $primary;
+    transform: scale(0);
+    transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  // Text wrapper — keeps label above the fill
+  &__text {
+    position: relative;
+    z-index: 1;
+    display: inherit;
+    align-items: inherit;
+    gap: inherit;
+  }
 
   // White pill on dark — primary CTA on dark canvas
   &--primary {
@@ -26,7 +49,8 @@
     color: $canvas-dark;
 
     &:hover {
-      background: $faint;
+      background: $primary;
+      color: $on-primary;
       text-decoration: none;
     }
   }
@@ -37,7 +61,8 @@
     color: $on-dark;
 
     &:hover {
-      background: $surface-elevated;
+      background: $primary;
+      color: $on-primary;
       text-decoration: none;
     }
   }
@@ -48,7 +73,8 @@
     color: $ink;
 
     &:hover {
-      background: $hairline-light;
+      background: $primary;
+      color: $on-primary;
       text-decoration: none;
     }
   }
@@ -60,7 +86,9 @@
     border: 1px solid $hairline-strong;
 
     &:hover {
-      background: $surface-soft;
+      background: $primary;
+      color: $on-primary;
+      border-color: $primary;
       text-decoration: none;
     }
   }
@@ -72,7 +100,9 @@
     border: 1px solid rgba(255, 255, 255, 0.4);
 
     &:hover {
-      border-color: $on-dark;
+      background: $primary;
+      color: $on-primary;
+      border-color: $primary;
       text-decoration: none;
     }
   }

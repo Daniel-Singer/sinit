@@ -73,6 +73,38 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
+// --- Button spotlight fill -------------------------------------------------
+document.querySelectorAll('.btn').forEach(btn => {
+  // Wrap existing content so it stays above the fill
+  const textSpan = document.createElement('span');
+  textSpan.className = 'btn__text';
+  while (btn.firstChild) textSpan.appendChild(btn.firstChild);
+  btn.appendChild(textSpan);
+
+  // Prepend fill so it sits beneath the text wrapper
+  const fill = document.createElement('span');
+  fill.className = 'btn__fill';
+  fill.setAttribute('aria-hidden', 'true');
+  btn.prepend(fill);
+
+  btn.addEventListener('mouseenter', e => {
+    const rect = btn.getBoundingClientRect();
+    const x    = e.clientX - rect.left;
+    const y    = e.clientY - rect.top;
+    const size = Math.sqrt(rect.width ** 2 + rect.height ** 2) * 2;
+
+    fill.style.width     = `${size}px`;
+    fill.style.height    = `${size}px`;
+    fill.style.left      = `${x - size / 2}px`;
+    fill.style.top       = `${y - size / 2}px`;
+    fill.style.transform = 'scale(1)';
+  });
+
+  btn.addEventListener('mouseleave', () => {
+    fill.style.transform = 'scale(0)';
+  });
+});
+
 // --- Cursor dot ------------------------------------------------------------
 const cursorDot = document.querySelector('.cursor-dot');
 

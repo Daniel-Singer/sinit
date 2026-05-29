@@ -237,15 +237,35 @@ small {
   letter-spacing: 0.24px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  transition: color 0.3s ease, border-color 0.3s ease, background-color 0.55s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+.btn__fill {
+  position: absolute;
+  border-radius: 50%;
+  background: #494fdf;
+  transform: scale(0);
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  z-index: 0;
+}
+.btn__text {
+  position: relative;
+  z-index: 1;
+  display: inherit;
+  align-items: inherit;
+  gap: inherit;
 }
 .btn--primary {
   background: #ffffff;
   color: #000000;
 }
 .btn--primary:hover {
-  background: #c9c9cd;
+  background: #494fdf;
+  color: #ffffff;
   text-decoration: none;
 }
 .btn--dark {
@@ -253,7 +273,8 @@ small {
   color: #ffffff;
 }
 .btn--dark:hover {
-  background: #16181a;
+  background: #494fdf;
+  color: #ffffff;
   text-decoration: none;
 }
 .btn--soft {
@@ -261,7 +282,8 @@ small {
   color: #191c1f;
 }
 .btn--soft:hover {
-  background: #e2e2e7;
+  background: #494fdf;
+  color: #ffffff;
   text-decoration: none;
 }
 .btn--outline-light {
@@ -270,7 +292,9 @@ small {
   border: 1px solid #191c1f;
 }
 .btn--outline-light:hover {
-  background: #f4f4f4;
+  background: #494fdf;
+  color: #ffffff;
+  border-color: #494fdf;
   text-decoration: none;
 }
 .btn--outline-dark {
@@ -279,7 +303,9 @@ small {
   border: 1px solid rgba(255, 255, 255, 0.4);
 }
 .btn--outline-dark:hover {
-  border-color: #ffffff;
+  background: #494fdf;
+  color: #ffffff;
+  border-color: #494fdf;
   text-decoration: none;
 }
 .btn--sm {
