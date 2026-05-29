@@ -1253,30 +1253,26 @@ textarea.text-input {
   color: #494fdf;
 }
 .faq__question-icon {
-  width: 24px;
-  height: 24px;
   flex-shrink: 0;
-  border-radius: 50%;
-  border: 1px solid #191c1f;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.25s ease, background 0.15s ease, border-color 0.15s ease;
-  color: #191c1f;
-  font-size: 18px;
+  transition: transform 0.3s ease, color 0.2s ease;
+  color: #505a63;
+  font-size: 28px;
+  font-weight: 300;
   line-height: 1;
+  font-family: "Manrope", "Inter Display", system-ui, sans-serif;
 }
 .faq__question-icon::after {
   content: "+";
+}
+.faq__question:hover .faq__question-icon {
+  color: #494fdf;
 }
 .faq__question[aria-expanded=true] {
   color: #191c1f;
 }
 .faq__question[aria-expanded=true] .faq__question-icon {
   transform: rotate(45deg);
-  background: #191c1f;
-  border-color: #191c1f;
-  color: #ffffff;
+  color: #191c1f;
 }
 .faq__answer {
   overflow: hidden;

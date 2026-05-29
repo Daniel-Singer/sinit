@@ -495,20 +495,19 @@
     &:hover { color: $primary; }
 
     &-icon {
-      width: 24px;
-      height: 24px;
       flex-shrink: 0;
-      border-radius: 50%;
-      border: 1px solid $hairline-strong;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.25s ease, background 0.15s ease, border-color 0.15s ease;
-      color: $ink;
-      font-size: 18px;
+      transition: transform 0.3s ease, color 0.2s ease;
+      color: $mute;
+      font-size: 28px;
+      font-weight: 300;
       line-height: 1;
+      font-family: $font-display;
 
       &::after { content: '+'; }
+    }
+
+    &:hover .faq__question-icon {
+      color: $primary;
     }
 
     &[aria-expanded="true"] {
@@ -516,9 +515,7 @@
 
       .faq__question-icon {
         transform: rotate(45deg);
-        background: $ink;
-        border-color: $ink;
-        color: $canvas-light;
+        color: $ink;
       }
     }
   }
