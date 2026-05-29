@@ -520,6 +520,34 @@ textarea.text-input {
   transition-delay: 0.7s;
 }
 
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #494fdf;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+  transition: width 0.2s ease, height 0.2s ease, opacity 0.3s ease, background 0.2s ease;
+  opacity: 0;
+}
+.cursor-dot.is-active {
+  opacity: 1;
+}
+.cursor-dot.is-hovering {
+  width: 20px;
+  height: 20px;
+  background: #4f55f1;
+}
+@media (hover: none) {
+  .cursor-dot {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .navbar,
   .hero__eyebrow,

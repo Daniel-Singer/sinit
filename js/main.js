@@ -73,6 +73,39 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
+// --- Cursor dot ------------------------------------------------------------
+const cursorDot = document.querySelector('.cursor-dot');
+
+if (cursorDot && window.matchMedia('(hover: hover)').matches) {
+  let mouseX = 0, mouseY = 0;
+  let dotX   = 0, dotY   = 0;
+  const LERP = 0.1; // lower = more lag
+
+  window.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursorDot.classList.add('is-active');
+  });
+
+  window.addEventListener('mouseleave', () => {
+    cursorDot.classList.remove('is-active');
+  });
+
+  // Scale up on interactive elements
+  const interactives = 'a, button, [role="button"], label, input, textarea, select';
+  document.querySelectorAll(interactives).forEach(el => {
+    el.addEventListener('mouseenter', () => cursorDot.classList.add('is-hovering'));
+    el.addEventListener('mouseleave', () => cursorDot.classList.remove('is-hovering'));
+  });
+
+  (function loop() {
+    dotX += (mouseX - dotX) * LERP;
+    dotY += (mouseY - dotY) * LERP;
+    cursorDot.style.transform = `translate(${dotX - 5}px, ${dotY - 5}px)`;
+    requestAnimationFrame(loop);
+  })();
+}
+
 // --- Scroll animations via IntersectionObserver ----------------------------
 const animateEls = document.querySelectorAll('.animate-fade-up, .animate-stagger');
 

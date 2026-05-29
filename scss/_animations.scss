@@ -82,6 +82,39 @@
   }
 }
 
+// --- Cursor dot ------------------------------------------------------------
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: $primary;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+  transition: width 0.2s ease, height 0.2s ease, opacity 0.3s ease, background 0.2s ease;
+  opacity: 0;
+
+  &.is-active {
+    opacity: 1;
+  }
+
+  // Scale up on interactive elements
+  &.is-hovering {
+    width: 20px;
+    height: 20px;
+    background: $primary-bright;
+  }
+
+  // Touch devices and reduced motion: hide entirely
+  @media (hover: none) {
+    display: none;
+  }
+}
+
+
 // --- Reduced motion: respect user preference -------------------------------
 @media (prefers-reduced-motion: reduce) {
   .navbar,
