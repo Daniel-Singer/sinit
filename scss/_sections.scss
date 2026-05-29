@@ -59,7 +59,7 @@
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: $space-xl;
   }
 
@@ -110,12 +110,6 @@
 
     &:hover::after {
       transform: translateX(3px);
-    }
-  }
-
-  @media (max-width: #{$bp-desktop}) {
-    &__grid {
-      grid-template-columns: repeat(2, 1fr);
     }
   }
 

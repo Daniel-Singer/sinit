@@ -564,7 +564,8 @@ textarea.text-input {
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  max-width: 800px;
+  max-width: 1080px;
+  width: 100%;
 }
 .hero__eyebrow {
   display: inline-flex;
@@ -683,7 +684,7 @@ textarea.text-input {
 }
 .services__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 .services__card {
@@ -729,11 +730,6 @@ textarea.text-input {
 }
 .services__card-link:hover::after {
   transform: translateX(3px);
-}
-@media (max-width: 1024px) {
-  .services__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 @media (max-width: 768px) {
   .services__grid {
