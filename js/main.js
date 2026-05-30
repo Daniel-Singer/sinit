@@ -154,6 +154,24 @@ if ('IntersectionObserver' in window && animateEls.length) {
   animateEls.forEach(el => scrollObserver.observe(el));
 }
 
+// --- Cookie consent banner -------------------------------------------------
+const cookieBanner  = document.getElementById('cookie-banner');
+const cookieAccept  = document.getElementById('cookie-accept');
+const cookieDecline = document.getElementById('cookie-decline');
+
+if (cookieBanner && !localStorage.getItem('cookieConsent')) {
+  // Slight delay so the banner slides in after the page settles
+  setTimeout(() => cookieBanner.classList.remove('is-hidden'), 600);
+}
+
+function dismissCookieBanner(choice) {
+  localStorage.setItem('cookieConsent', choice);
+  cookieBanner.classList.add('is-hidden');
+}
+
+cookieAccept  && cookieAccept.addEventListener('click',  () => dismissCookieBanner('accepted'));
+cookieDecline && cookieDecline.addEventListener('click', () => dismissCookieBanner('declined'));
+
 // --- Contact form submission (placeholder) ---------------------------------
 const contactForm = document.querySelector('.contact__form');
 
