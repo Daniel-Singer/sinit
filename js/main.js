@@ -197,9 +197,10 @@ if (contactForm) {
   contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const btn = contactForm.querySelector('button[type="submit"]');
-    const originalText = btn.textContent;
+    const btnLabel = btn.querySelector(".btn__text") ?? btn;
+    const originalText = btnLabel.textContent;
 
-    btn.textContent = "Wird gesendet…";
+    btnLabel.textContent = "Wird gesendet…";
     btn.disabled = true;
 
     try {
@@ -216,19 +217,19 @@ if (contactForm) {
 
       if (!res.ok) throw new Error(res.status);
 
-      btn.textContent = "Nachricht gesendet!";
+      btnLabel.textContent = "Nachricht gesendet!";
       contactForm.reset();
 
       setTimeout(() => {
-        btn.textContent = originalText;
+        btnLabel.textContent = originalText;
         btn.disabled = false;
       }, 4000);
     } catch {
-      btn.textContent = "Fehler – bitte erneut versuchen";
+      btnLabel.textContent = "Fehler – bitte erneut versuchen";
       btn.disabled = false;
 
       setTimeout(() => {
-        btn.textContent = originalText;
+        btnLabel.textContent = originalText;
       }, 4000);
     }
   });
